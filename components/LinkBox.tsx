@@ -1,24 +1,29 @@
 import { cn } from "@/utils";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 type IProps = {
   text: string;
   url: string;
+  icon?: ReactNode;
 };
 
-const LinkBox: React.FC<IProps> = ({ url, text }) => {
+const LinkBox: React.FC<IProps> = ({ url, text, icon }) => {
   return (
     <Link
       href={url}
       className={cn(
         "w-full  max-w-2xl flex justify-between ",
         "bg-muted p-4 rounded-md box-border",
-        "b1 overflow-x-auto relative group",
+        "b1 overflow-x-auto relative group items-center",
         "hover:bg-gray-light default-transition"
       )}
     >
-      <h6 className="w-max b2-primary text-white/75">{text}</h6>
+      <div className="flex items-center gap-2">
+        {icon && <div className="w-[30px] h-[30px] overflow-hidden flex-center">{icon}</div>}
+        <h6 className="w-max b2-primary text-2xl text-white/75 h-max">{text}</h6>
+      </div>
       <ArrowRightIcon
         size={18}
         className={cn(

@@ -63,15 +63,15 @@ const SearchModal: React.FC<ISearchModalProps> = ({
             className={cn(
               "fixed-screen flex justify-center z-50",
               showSearch
-                ? "bg-black/70 pointer-events-auto"
+                ? "bg-white/10 pointer-events-auto"
                 : "bg-black/0 pointer-events-none"
             )}
             onClick={() => setShowSearch(false)}
           >
             <div
               className={cn(
-                "w-[500px] min-h-[60px] bg-black",
-                "border border-gray-500 rounded",
+                "w-[500px] min-h-[60px] bg-[#111]",
+                "rounded text-white/75",
                 "default-transition h-max translate-y-[20vh]",
                 showSearch ? "scale-[1] opacity-100" : "scale-[0.5] opacity-0"
               )}
@@ -81,7 +81,7 @@ const SearchModal: React.FC<ISearchModalProps> = ({
                 <input
                   ref={inputRef}
                   className={cn(
-                    "p-5 w-[90%] outline-none placeholder:text-gray-700",
+                    "p-5 w-[90%] outline-none placeholder:text-[#FF5C00]/50",
                     "text-white/75"
                   )}
                   value={query}
@@ -91,22 +91,22 @@ const SearchModal: React.FC<ISearchModalProps> = ({
                 <button
                   type="button"
                   className={cn(
-                    "text-xs bg-gray-900 text-white/50",
+                    "text-xs bg-[#FF5C00] text-black",
                     "w-[10%] h-[1.5rem] flex-center rounded",
-                    "cursor-pointer"
+                    "cursor-pointer font-bold"
                   )}
                   onClick={() => setShowSearch(false)}
                 >
                   ESC
                 </button>
               </div>
-              <div className="w-full h-[1px] bg-gray-500"></div>
+              <div className="w-full h-[0.5px] bg-white/50"></div>
               <ul className="flex-x w-full gap-0 p-3 s1-b text-white/70">
                 {!query && (
                   <p
                     className={cn(
                       "w-full py-2 px-2",
-                      "rounded cursor-pointer text-gray-700",
+                      "rounded cursor-pointer text-white/50",
                       "animate-pulse"
                     )}
                   >
@@ -117,8 +117,8 @@ const SearchModal: React.FC<ISearchModalProps> = ({
                   filtered.map((item) => (
                     <li
                       className={cn(
-                        "w-full py-2 px-2 hover:bg-gray-900",
-                        "rounded cursor-pointer text-gray-500",
+                        "w-full py-2 px-2 hover:bg-[#FF5C00]/50",
+                        "rounded cursor-pointer text-white/50",
                         "default-transition hover:text-gray-300"
                       )}
                       key={item.id}

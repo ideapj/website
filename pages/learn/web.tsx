@@ -1,5 +1,6 @@
 import LinkSummary, { ILinkSummary } from "@/components/LinkSummary";
 import TitleComp from "@/components/TitleComp";
+import { LearnBeardcrumb } from "@/configs/beardcrumb";
 import LearnLayout from "@/layouts/LearnLayout";
 
 const stack = [
@@ -21,9 +22,9 @@ const contents: ILinkSummary[] = [
   {
     id: "seo-friendly-portoflio",
     url: "/learn/frontend-creating-todo-app",
-    title: "Build SEO Friendly Portfolio",
+    title: "Build SEO Friendly Website",
     stack,
-    level: 1,
+    level: 2,
     summary: (
       <>
         <p>
@@ -43,8 +44,45 @@ const contents: ILinkSummary[] = [
   {
     id: "creating-todo-app",
     url: "/learn/frontend-creating-todo-app",
-    title: "Creating todo app",
-    stack,
+    title: "Working with API on Web",
+    stack: [
+      ...stack,
+      {
+        id: "tanstack-query",
+        name: "Tanstack Query",
+      },
+    ],
+    level: 1,
+    summary: (
+      <>
+        <p>
+          {
+            "Lets explore the Idea PJ's Front End Framework by creating the simple todo app."
+          }
+          {" In this tutorial we will explore "}
+        </p>
+        <ul className="list list-disc section-body mt-5 mb-3">
+          <li>Fetching and Mutation data</li>
+          <li>Styling website</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: "creating-todo-app",
+    url: "/learn/frontend-creating-todo-app",
+    title: "State Management on Web",
+    stack: [
+      ...stack,
+     {
+        id: "tanstack-query",
+        name: "Tanstack Query",
+      },
+      {
+        id: "zustand",
+        name: "Zustand",
+      },
+    ],
     level: 1,
     summary: (
       <>
@@ -67,7 +105,7 @@ const Page = () => {
   return (
     <LearnLayout>
       <section className="section-container">
-        <TitleComp title="Learning Front End" variant="title" />
+        <TitleComp title="Web" variant="title" beardcrumb={LearnBeardcrumb} />
         <div className="flex flex-col gap-10 mt-5">
           {contents.map((content) => (
             <LinkSummary {...content} key={content.id} />

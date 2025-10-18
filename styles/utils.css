@@ -12,8 +12,26 @@
 @utility fixed-screen-center {
   @apply flex-center fixed-screen;
 }
+@utility flex-screen-center {
+  @apply flex-center w-screen h-screen;
+}
+
+@utility flex-y {
+  @apply flex flex-col
+}
 
 @utility flex-x {
-  @apply flex flex-col
+  @apply flex flex-row
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari, Opera */
+  }
 }
 

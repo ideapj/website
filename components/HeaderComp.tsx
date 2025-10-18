@@ -20,16 +20,16 @@ const menus: IMenuItem[] = [
     url: "/learn",
     label: "Learn",
   },
-  {
-    id: "guide",
-    url: "/guide",
-    label: "Guide",
-  },
-  {
-    id: "blogs",
-    url: "/blogs",
-    label: "Blogs",
-  },
+  // {
+  //   id: "guide",
+  //   url: "/guide",
+  //   label: "Guide",
+  // },
+  // {
+  //   id: "blogs",
+  //   url: "/blogs",
+  //   label: "Blogs",
+  // },
 ];
 
 const MenuItem: React.FC<IMenuItem> = ({ id, url, label }) => {

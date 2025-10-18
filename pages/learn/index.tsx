@@ -1,47 +1,42 @@
 import LinkBox from "@/components/LinkBox";
 import TitleComp from "@/components/TitleComp";
+import ReactNativeIcon from "@/icons/ReactNativeIcon";
+import ServerlessIcon from "@/icons/ServerlessIcon";
+import ShopifyIcon from "@/icons/ShopifyIcon";
+import WebDesignIcon from "@/icons/WebDesignIcon";
+import WebIcon from "@/icons/WebIcon";
 import LearnLayout from "@/layouts/LearnLayout";
 
 const paths = [
   {
-    id: "fontend",
-    name: "Front End",
-    url: "/learn/frontend",
+    id: "web",
+    name: "Web",
+    url: "/learn/web",
+    icon: <WebIcon size={30}/>,
   },
   {
-    id: "backend",
-    name: "Back End",
-    url: "/learn/backend",
-  },
-  {
-    id: "git",
-    name: "Git",
-    url: "/learn/git",
-  },
-  {
-    id: "dev-ops",
-    name: "DevOps",
-    url: "/learn/dev-ops",
+    id: "serverless",
+    name: "Serverless",
+    url: "/learn/serverless",
+    icon: <ServerlessIcon size={23}/>,
   },
   {
     id: "web-design",
     name: "Web Design",
     url: "/learn/web-design",
+    icon: <WebDesignIcon size={23}/>,
   },
   {
-    id: "dsa",
-    name: "DSA",
-    url: "/learn/web-design",
-  },
-  {
-    id: "design-patterns",
-    name: "Design Patterns",
-    url: "/learn/design-patterns",
+    id: "shopify",
+    name: "Shopify",
+    url: "/learn/shopify",
+    icon: <ShopifyIcon size={25}/>,
   },
   {
     id: "react-native",
     name: "React Native",
     url: "/learn/react-native",
+    icon: <ReactNativeIcon size={25}/>,
   },
 ];
 
