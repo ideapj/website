@@ -70,9 +70,9 @@ const SearchModal: React.FC<ISearchModalProps> = ({
           >
             <div
               className={cn(
-                "w-[500px] min-h-[60px] bg-[#111]",
-                "rounded text-white/75",
-                "default-transition h-max translate-y-[20vh]",
+                "w-[500px] min-h-[60px] bg-[#222]",
+                "rounded text-white/75 border-5 border-muted",
+                "default-transition h-max translate-y-[20vh] shadow-lg",
                 showSearch ? "scale-[1] opacity-100" : "scale-[0.5] opacity-0"
               )}
               onClick={(e) => e.stopPropagation()}
@@ -101,7 +101,10 @@ const SearchModal: React.FC<ISearchModalProps> = ({
                 </button>
               </div>
               <div className="w-full h-[0.5px] bg-white/50"></div>
-              <ul className="flex-x w-full gap-0 p-3 s1-b text-white/70">
+              <ul className={cn(
+                "flex-y w-full gap-0 p-3 s1-b text-white/70",
+                "cursor-pointer"
+              )}>
                 {!query && (
                   <p
                     className={cn(
