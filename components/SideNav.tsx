@@ -29,7 +29,7 @@ const SideNavItem:React.FC<IPageLink> = ({ label, url }) => {
     <li className="w-full 0">
       <Link href={url} className={cn(
         "flex items-center gap-[13px] group",
-        "text-white/70 hover:text-white",
+        "text-color-75",
         "default-transition",
     )}>
         <span className={cn(

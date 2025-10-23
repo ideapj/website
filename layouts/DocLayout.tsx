@@ -16,10 +16,10 @@ interface IProps {
 
 const DocLayout: React.FC<IProps> = ({ sections, children, seo }) => {
   return (
-    <div className="w-screen min-h-screen flex flex-col">
+    <div className="w-screen min-h-screen flex flex-col text-color">
       <HeaderComp />
       <SEOHeaders {...seo} />
-      <main className="w-screen flex justify-between px-[65px]">
+      <main className="w-screen flex justify-between px-[65px] pb-[150px]">
         <SideNav />
         <article className="article-container">{children}</article>
         <SectionNav menus={sections} />

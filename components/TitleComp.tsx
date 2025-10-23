@@ -28,7 +28,7 @@ const TitleComp: React.FC<IProps> = ({
     setTimeout(() => setCopied(false), 2000); // Reset after 2s
   };
   return (
-    <div className="flex-y gap-3">
+    <div className="flex-y gap-3 text-color">
       <div className="flex gap-2 w-max max-w-screen items-center">
         <Title
           className={cn(
@@ -42,7 +42,7 @@ const TitleComp: React.FC<IProps> = ({
         <button
           type="button"
           className={cn(
-            "text-xl cursor-pointer text-white/75",
+            "text-xl cursor-pointer text-color-75",
             "w-[20px] h-[20px] relative"
           )}
           onClick={handleCopy}

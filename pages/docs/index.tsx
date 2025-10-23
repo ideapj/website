@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ISectionTitle } from "@/types/common";
 import DocLayout from "@/layouts/DocLayout";
 import LinkList from "@/components/LinkList";
+import LinkBox from "@/components/LinkBox";
 
 const hostings = [
   {
@@ -29,31 +30,44 @@ const sections: ISectionTitle[] = [
   { title: "Hosting", id: "hosting" },
 ];
 
+const frameworks = [
+  {
+    id: "pj-web",
+    name: "Web Framework",
+    url: "/docs/web",
+  },
+  {
+    id: "pj-api",
+    name: "Serverless API Framework",
+    url: "/docs/api",
+  },
+];
+
 const Page = () => {
   return (
     <DocLayout sections={sections}>
       <section className="section-container">
         <TitleComp title="Introduction" variant="title" />
-        <p className="section-body">
-            IdeaPJ is the Serverless Fullstack framework which is desgned to scale with the company.
+        <p className="section-body text-color">
+          Idea PJ is for <span className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-orange-500 after:rounded px-2">enterprise business </span> only.
+        </p>
+
+        <h5 className="s1-b text-color-75 mt-5">Framework from Idea PJ</h5>
+        <p>
+          Idea PJ sets the rules that keep every project secure, high-quality, and performance-driven.
+        </p>
+        <div className="flex-y gap-2">
+        {
+          frameworks.map(item => (
+            <LinkBox text={item.name} url={item.url} key={item.id} />
+          ))
+        }
+        </div>
         
-        </p>
-        <p className="section-body">
-          Idea PJ allow developer to:
-        </p>
-        <ul className="list list-disc section-body">
-          <li>easily configure SEO</li>
-          <li>built secure websites</li>
-          <li>built better UI & UX for the users</li>
-          <li>
-            develop and maintain client side{`( Browsers )`} code
-          </li>
-          <li>develop and maintain server side code</li>
-        </ul>
       </section>
       <section className="section-container">
         <TitleComp {...sections[0]} />
-        <h5 className="s1-b text-white/75 mt-5">Router</h5>
+        <h5 className="s1-b text-color-75 mt-5">Router</h5>
         <p className="section-body">
           NextJS come with two router which is page router and app router. Both
           page router and app router come with benefits and drawback.
@@ -62,7 +76,7 @@ const Page = () => {
           Page Router come first, because of that most of our ( idea pj ) tech
           stack revolve around the page router.
         </p>
-        <h5 className="s1-b text-white/75 mt-5">State Management</h5>
+        <h5 className="s1-b text-color-75 mt-5">State Management</h5>
         <p className="section-body">
           State is a special variable in a React component that, when updated,
           automatically informs (or triggers) the component to re-render with
@@ -111,7 +125,7 @@ const Page = () => {
             </Link>
           </li>
         </ul>
-        <h5 className="s1-b text-white/75 mt-5">Data Fetching & Mutations</h5>
+        <h5 className="s1-b text-color-75 mt-5">Data Fetching & Mutations</h5>
         <p className="section-body">
           When fetching or mutating data from an API (separate backend), there’s
           one key consideration:
@@ -147,7 +161,7 @@ const Page = () => {
           </span>
           Learn more
         </Link>
-        <h5 className="s1-b text-white/75 mt-5">Styling</h5>
+        <h5 className="s1-b text-color-75 mt-5">Styling</h5>
         <p className="section-body">
           We focus on structure, design token, typography & accessbility in
           design stage and copy the flow to development stage.
@@ -156,18 +170,25 @@ const Page = () => {
       <section className="section-container">
         <TitleComp {...sections[1]} />
         <p className="section-body">
-          {"We’ll create a custom design system that combines the structure and discipline of frameworks like Material UI and Ant Design, with the creativity and agility of shadcn/ui and tweakcn."}
+          {
+            "We’ll create a custom design system that combines the structure and discipline of frameworks like Material UI and Ant Design, with the creativity and agility of shadcn/ui and tweakcn."
+          }
         </p>
         <p className="section-body">
-          {"This approach allows us to maintain consistency and scalability while staying flexible for creative, brand-driven design needs."}
+          {
+            "This approach allows us to maintain consistency and scalability while staying flexible for creative, brand-driven design needs."
+          }
         </p>
       </section>
       <section className="section-container">
         <TitleComp {...sections[2]} />
         <p className="section-body">
-          We primarily rely on AWS Cloud Services for hosting. In most cases, we use AWS Amplify for rapid deployment and scalability. However, depending on client needs, we also support Docker or EC2-based VM hosting for more customized infrastructure setups.
+          We primarily rely on AWS Cloud Services for hosting. In most cases, we
+          use AWS Amplify for rapid deployment and scalability. However,
+          depending on client needs, we also support Docker or EC2-based VM
+          hosting for more customized infrastructure setups.
         </p>
-        <LinkList list={hostings}/>
+        <LinkList list={hostings} />
       </section>
     </DocLayout>
   );

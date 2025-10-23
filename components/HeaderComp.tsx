@@ -2,6 +2,7 @@ import { cn } from "@/utils";
 import Link from "next/link";
 import PageSearch from "./PageSearch";
 import { useRouter } from "next/router";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 type IMenuItem = {
   id: string;
@@ -43,7 +44,7 @@ const MenuItem: React.FC<IMenuItem> = ({ id, url, label }) => {
     <li className={cn(
       "flex flex-col default-transition",
       "h-[30px] justify-between",
-      isActive ? "text-white" : "text-white/50"
+      isActive ? "text-color" : "text-color-75"
     )}>
       <Link href={url}>{label}</Link>
       {isActive && (
@@ -58,27 +59,28 @@ const HeaderComp: React.FC = () => {
     <>
       <header
         className={cn(
-          "w-screen h-[75px] fixed top-0 bg-(--background)",
+          "w-screen h-[75px] fixed top-0 bg-(--color-background)",
           "px-[65px] grid grid-cols-3 items-center",
           "border-b border-b-white/10 z-30"
         )}
       >
         <Link className="grid-cols-1" href="/">
-          <h1 className="h1-primary text-white/80 hover:text-white default-transition">
+          <h1 className="h1-primary text-color-75 hover:text-white default-transition">
             Idea P<span className="text-primary">J</span>
           </h1>
         </Link>
         <ul
           className={cn(
             "b1-b flex-center gap-[25px]",
-            "-translate-x-[10px] text-white/50"
+            "-translate-x-[10px] text-color-75"
           )}
         >
           {menus.map((item) => (
             <MenuItem {...item} key={item.id} />
           ))}
         </ul>
-        <div className="w-full flex justify-end grid-cols-1">
+        <div className="w-full flex justify-end items-center gap-10">
+          <ThemeSwitcher/>
           <PageSearch />
         </div>
       </header>

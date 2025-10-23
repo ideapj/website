@@ -19,7 +19,7 @@ const LinkList: React.FC<IProp> = ({ list }) => {
         <li key={item.id}>
           <Link
             className={cn(
-              "flex gap-2 text-primary",
+              "flex gap-2 text-secondary",
               "group items-center text-sm"
             )}
             href={item.url}

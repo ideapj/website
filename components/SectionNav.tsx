@@ -51,9 +51,9 @@ const SectionNav: React.FC<IProps> = ({menus}) => {
       onClick={() => handleScrollTo(id)}
       key={id}
       className={cn(
-        "s1 text-white/50 default-transition section-nav-item",
+        "s1 text-color-75 default-transition section-nav-item",
         "text-left cursor-pointer",
-        active == id ? "text-white/90" : ""
+        active == id ? "text-color font-bold" : ""
       )}
     >
       {label}
@@ -62,7 +62,7 @@ const SectionNav: React.FC<IProps> = ({menus}) => {
   return (
     <aside className={cn("w-[300px] min-h-screen h-max relative")}>
       <div className="flex flex-col mt-[75px] fixed ">
-        <h1 className="b1-b text-white/80">On this page</h1>
+        <h1 className="b1-b text-color-75">On this page</h1>
         <nav className="relative flex flex-col gap-4 mt-5">
           {
             menus.map(item => navItem(item.id, item.title))

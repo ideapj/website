@@ -85,3 +85,7 @@
   @apply text-[20px] leading-[18px] font-light tracking-[-0.25px] [font-family:var(--font-jersey)] not-italic;
 }
 
+@utility font-jersey {
+  @apply [font-family:var(--font-jersey)];
+}
+

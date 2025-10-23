@@ -1,8 +1,8 @@
 :root {
-  --background: #111111;
-  --foreground: #ededed;
+  color-scheme: light dark;
+  --black: #000;
+  --white: #ededed;
 }
-
 
 @theme inline {
   --color-background: var(--background);
@@ -13,3 +13,40 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+
+html:has(#light:checked) {
+  color-scheme: light;
+  --color-background: var(--white);
+  --color-foreground: var(--black);
+
+  /* text color */
+  --color-text: rgb(0,0,0);
+  --color-text-invert: rgb(255,255,255);
+  --color-text-75: rgba(0,0,0,0.75);
+}
+html:has(#dark:checked) {
+  color-scheme: dark;
+  --color-background: var(--black);
+  --color-foreground: var(--white);
+
+  /* text color */
+  --color-text: rgb(255,255,255);
+  --color-text-invert: rgb(0,0,0);
+  --color-text-75: rgba(255,255,255,0.75);
+
+}
+
+@utility text-color {
+  @apply text-(--color-text) default-transition;
+}
+@utility text-color-invert {
+  @apply text-(--color-text-invert) default-transition;
+}
+@utility text-color-75 {
+  @apply text-(--color-text-75) default-transition;
+}
+
+
+
+
+

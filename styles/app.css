@@ -7,7 +7,7 @@
 }
 
 @utility section-body {
-    @apply b1 text-gray-300
+    @apply b1 
 }
 
 @utility list {
