@@ -32,7 +32,8 @@ const TitleComp: React.FC<IProps> = ({
       <div className="flex gap-2 w-max max-w-screen items-center">
         <Title
           className={cn(
-            variant == "title" ? "title1-primary" : "h2-primary",
+            "font-jersey ",
+            variant == "title" ? "text-6xl" : "text-4xl",
             "w-max scroll-mt-[100px]"
           )}
           id={id}

@@ -45,6 +45,9 @@ html:has(#dark:checked) {
 @utility text-color-75 {
   @apply text-(--color-text-75) default-transition;
 }
+@utility fill-color {
+  @apply fill-(--color-text-75) default-transition;
+}
 
 
 

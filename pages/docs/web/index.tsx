@@ -33,7 +33,7 @@ const Page = () => {
   return (
     <DocLayout sections={sections}>
       <section className="section-container">
-        <TitleComp title="Introduction" variant="title" />
+        <TitleComp title="Web" variant="title" />
         <p className="section-body">
             IdeaPJ is the Serverless Fullstack framework which is desgned to scale with the company.
         

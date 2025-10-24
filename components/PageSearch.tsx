@@ -6,6 +6,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import { searchData } from "@/data/search.data";
 import { CgFileDocument } from "react-icons/cg";
+import { Search } from "lucide-react";
 
 interface ISearchModalProps {
   showSearch: boolean;
@@ -51,7 +52,7 @@ const SearchModal: React.FC<ISearchModalProps> = ({
 
   useEffect(() => {
     if (showSearch) {
-        inputRef.current?.focus();
+      inputRef.current?.focus();
     }
   }, [showSearch]);
 
@@ -61,7 +62,7 @@ const SearchModal: React.FC<ISearchModalProps> = ({
         createPortal(
           <div
             className={cn(
-              "fixed-screen flex justify-center z-50",
+              "fixed-screen flex z-50",
               showSearch
                 ? "bg-white/10 pointer-events-auto"
                 : "bg-black/0 pointer-events-none"
@@ -70,10 +71,12 @@ const SearchModal: React.FC<ISearchModalProps> = ({
           >
             <div
               className={cn(
-                "w-[500px] min-h-[60px] bg-[#222]",
+                "w-[500px] h-screen bg-[#222] absolute top-0 right-0",
                 "rounded text-white/75 border-5 border-muted",
-                "default-transition h-max translate-y-[20vh] shadow-lg",
-                showSearch ? "scale-[1] opacity-100" : "scale-[0.5] opacity-0"
+                "default-transition shadow-lg",
+                showSearch
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-[100%]"
               )}
               onClick={(e) => e.stopPropagation()}
             >
@@ -101,10 +104,12 @@ const SearchModal: React.FC<ISearchModalProps> = ({
                 </button>
               </div>
               <div className="w-full h-[0.5px] bg-white/50"></div>
-              <ul className={cn(
-                "flex-y w-full gap-0 p-3 s1-b text-white/70",
-                "cursor-pointer"
-              )}>
+              <ul
+                className={cn(
+                  "flex-y w-full gap-0 p-3 s1-b text-white/70",
+                  "cursor-pointer"
+                )}
+              >
                 {!query && (
                   <p
                     className={cn(
@@ -148,7 +153,7 @@ const PageSearch: React.FC = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        setShowSearch(true);
+        setShowSearch(pre => !pre);
       }
     };
 
@@ -161,20 +166,21 @@ const PageSearch: React.FC = () => {
         type="button"
         className={cn(
           "flex justify-between items-center",
-          "w-[200px] h-[45px] px-5 rounded",
-          "s1 cursor-pointer",
-          "bg-[#212121] text-white",
+          "w-max h-max rounded-lg",
+          "s1 cursor-pointer overflow-hidden",
           "default-transition group",
-          "hover:outline-none hover:ring-1 hover:ring-[#FF5C00]/50"
+          "border border-(--color-foreground)"
         )}
         onClick={() => setShowSearch((pre) => !pre)}
       >
-        Search
+        <div className="px-2 flex-center">
+          <Search size={15} />
+        </div>
         <div
           className={cn(
-            "flex px-3 py-[0.2rem] items-center",
+            "flex px-2 py-[0.2rem] items-center",
             "group-hover:bg-primary default-transition",
-            "text-sm gap-1 bg-[#111] text-gray-300"
+            "text-sm gap-1 text-color bg-primary"
           )}
         >
           <MdKeyboardCommandKey />K

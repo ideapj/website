@@ -3,6 +3,8 @@ import Link from "next/link";
 import PageSearch from "./PageSearch";
 import { useRouter } from "next/router";
 import ThemeSwitcher from "./ThemeSwitcher";
+import GithubIcon from "@/icons/GithubIcon";
+import LinkedInIcon from "@/icons/LinkedInIcon";
 
 type IMenuItem = {
   id: string;
@@ -41,11 +43,13 @@ const MenuItem: React.FC<IMenuItem> = ({ id, url, label }) => {
   })();
 
   return (
-    <li className={cn(
-      "flex flex-col default-transition",
-      "h-[30px] justify-between",
-      isActive ? "text-color" : "text-color-75"
-    )}>
+    <li
+      className={cn(
+        "flex flex-col default-transition",
+        "h-[30px] justify-between",
+        isActive ? "text-color font-bold" : "text-color-75"
+      )}
+    >
       <Link href={url}>{label}</Link>
       {isActive && (
         <div className="w-full h-[2px] bg-primary rounded-full"></div>
@@ -65,7 +69,13 @@ const HeaderComp: React.FC = () => {
         )}
       >
         <Link className="grid-cols-1" href="/">
-          <h1 className="h1-primary text-color-75 hover:text-white default-transition">
+          <h1 className={cn(
+            "text-color opacity-100",
+            "font-bold default-transition",
+            "text-4xl font-jersey",
+            "hover:opacity-80",
+            "text-shadow"
+          )}>
             Idea P<span className="text-primary">J</span>
           </h1>
         </Link>
@@ -79,8 +89,12 @@ const HeaderComp: React.FC = () => {
             <MenuItem {...item} key={item.id} />
           ))}
         </ul>
-        <div className="w-full flex justify-end items-center gap-10">
-          <ThemeSwitcher/>
+        <div className="w-full flex justify-end items-center gap-2">
+          <ThemeSwitcher />
+          <div className="flex-x px-2 items-center gap-2 ">
+            <GithubIcon size={25} />
+            <LinkedInIcon size={30} className="translate-y-0"/>
+          </div>
           <PageSearch />
         </div>
       </header>
