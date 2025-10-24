@@ -48,11 +48,11 @@ const Page = () => {
     <DocLayout sections={sections}>
       <section className="section-container">
         <TitleComp title="Introduction" variant="title" />
-        <p className="section-body text-color">
-          Idea PJ is for <span className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-orange-500 after:rounded px-2">enterprise business </span> only.
+        <p className=" text-color">
+          Idea PJ is for <span className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-orange-500 after:rounded px-1 after:translate-y-0.5 hover:after:translate-y-0 after:default-transition">enterprise business </span> only.
         </p>
 
-        <h5 className="s1-b text-color-75 mt-5">Framework from Idea PJ</h5>
+        <h5 className="font-bold text-color-75 mt-5">Framework from Idea PJ</h5>
         <p>
           Idea PJ sets the rules that keep every project secure, high-quality, and performance-driven.
         </p>
@@ -65,9 +65,10 @@ const Page = () => {
         </div>
         
       </section>
+      
       <section className="section-container">
         <TitleComp {...sections[0]} />
-        <h5 className="s1-b text-color-75 mt-5">Router</h5>
+        <h5 className="font-bold">Router</h5>
         <p className="section-body">
           NextJS come with two router which is page router and app router. Both
           page router and app router come with benefits and drawback.
@@ -76,7 +77,7 @@ const Page = () => {
           Page Router come first, because of that most of our ( idea pj ) tech
           stack revolve around the page router.
         </p>
-        <h5 className="s1-b text-color-75 mt-5">State Management</h5>
+        <h5 className="font-bold text-color-75 mt-5">State Management</h5>
         <p className="section-body">
           State is a special variable in a React component that, when updated,
           automatically informs (or triggers) the component to re-render with
@@ -125,7 +126,7 @@ const Page = () => {
             </Link>
           </li>
         </ul>
-        <h5 className="s1-b text-color-75 mt-5">Data Fetching & Mutations</h5>
+        <h5 className="font-bold text-color-75 mt-5">Data Fetching & Mutations</h5>
         <p className="section-body">
           When fetching or mutating data from an API (separate backend), there’s
           one key consideration:
@@ -161,7 +162,7 @@ const Page = () => {
           </span>
           Learn more
         </Link>
-        <h5 className="s1-b text-color-75 mt-5">Styling</h5>
+        <h5 className="font-bold text-color-75 mt-5">Styling</h5>
         <p className="section-body">
           We focus on structure, design token, typography & accessbility in
           design stage and copy the flow to development stage.

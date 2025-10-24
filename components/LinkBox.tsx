@@ -14,15 +14,15 @@ const LinkBox: React.FC<IProps> = ({ url, text, icon }) => {
     <Link
       href={url}
       className={cn(
-        "w-full  max-w-2xl flex justify-between ",
+        "w-full  max-w-2xl flex justify-between font-jersey",
         "bg-muted p-4 rounded-md box-border",
-        "b1 overflow-x-auto relative group items-center",
+        " overflow-x-auto relative group items-center",
         "hover:bg-gray-light default-transition"
       )}
     >
       <div className="flex items-center gap-2">
         {icon && <div className="w-[30px] h-[30px] overflow-hidden flex-center">{icon}</div>}
-        <h6 className="w-max b2-primary text-2xl text-white/75 h-max">{text}</h6>
+        <h6 className="w-max b2-primary text-xl text-white/75 h-max">{text}</h6>
       </div>
       <ArrowRightIcon
         size={18}

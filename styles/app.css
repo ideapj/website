@@ -3,11 +3,11 @@
 }
 
 @utility section-container {
-  @apply flex flex-col gap-[16px] min-h-[300px];
+  @apply flex flex-col gap-[16px] min-h-[300px] font-poppins;
 }
 
 @utility section-body {
-    @apply b1 
+  @apply text-color-75;
 }
 
 @utility list {

@@ -50,14 +50,14 @@ const TerminalBlock: React.FC<IProps> = ({ cmd }) => {
       )}
     >
       <div className={cn(
-        "flex items-center gap-2 mb-2 s1",
+        "flex items-center gap-2 mb-2",
         "border-b border-b-gray-500",
         "pb-5"
       )}>
-        <span className="text-gray-400 s1-primary">{">"}</span>
-        <span className="text-gray-300">Terminal</span>
+        <span className="text-gray-400">{">"}</span>
+        <span className="text-gray-300 font-jersey text-xl">Terminal</span>
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 text-sm">
         {Array.isArray(cmd) ? (
           <>
             {cmd.map((item, index) => (

@@ -29,15 +29,15 @@ const SideNavItem:React.FC<IPageLink> = ({ label, url }) => {
     <li className="w-full 0">
       <Link href={url} className={cn(
         "flex items-center gap-[13px] group",
-        "text-color-75",
-        "default-transition",
+        "text-color-75 font-semibold",
+        "default-transition text-sm",
     )}>
         <span className={cn(
-            "s1-primary default-transition",
+            "default-transition",
             "group-hover:translate-x-[5px]"
         )}>{">"}</span>
         <span className={cn(
-            "s1-m translate-y-[1px]",
+            "translate-y-[1px]",
         )}>{label}</span>
       </Link>
     </li>
