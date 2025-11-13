@@ -3,16 +3,23 @@ import React, { ReactNode, useState } from "react";
 import { IoIosCheckmark, IoMdCopy } from "react-icons/io";
 
 type ICMD = {
-  copy: string;
+  copy: string | null;
   code: ReactNode | ReactNode[];
   comment?: string;
+  divider?: boolean;
 };
 
 type IProps = {
   cmd: ICMD | ICMD[];
+  divider?: boolean;
 };
 
-const Prompt: React.FC<ICMD> = ({ code, copy, comment }) => {
+const Prompt: React.FC<ICMD> = ({
+  code,
+  copy,
+  comment,
+  divider,
+}) => {
   const [copied, setCopied] = useState(false);
   const handleCopy = (copy: string) => {
     navigator.clipboard.writeText(copy);
@@ -26,34 +33,40 @@ const Prompt: React.FC<ICMD> = ({ code, copy, comment }) => {
           <div className="s1 text-gray-500 mb-3">
             {"//"}&nbsp;{comment}
           </div>
-          
         </>
       )}
       <code>{code}</code>
-      <button
-        type="button"
-        className="absolute right-4 text-xl cursor-pointer"
-        onClick={() => handleCopy(copy)}
-      >
-        {copied ? <IoIosCheckmark /> : <IoMdCopy />}
-      </button>
+      {copy && (
+        <button
+          type="button"
+          className="absolute right-4 text-xl cursor-pointer"
+          onClick={() => handleCopy(copy)}
+        >
+          {copied ? <IoIosCheckmark /> : <IoMdCopy />}
+        </button>
+      )}
+      {divider && (
+        <div className="w-full border-t border-t-gray-500 border-dashed mt-5"></div>
+      )}
     </pre>
   );
 };
 
-const TerminalBlock: React.FC<IProps> = ({ cmd }) => {
+const TerminalBlock: React.FC<IProps> = ({ cmd, divider = false }) => {
   return (
     <div
       className={cn(
         "bg-muted text-white p-4 rounded-lg",
-        "w-full max-w-2xl relative",
+        "w-full max-w-2xl relative"
       )}
     >
-      <div className={cn(
-        "flex items-center gap-2 mb-2",
-        "border-b border-b-gray-500",
-        "pb-5"
-      )}>
+      <div
+        className={cn(
+          "flex items-center gap-2 mb-2",
+          "border-b border-b-gray-500",
+          "pb-5"
+        )}
+      >
         <span className="text-gray-400">{">"}</span>
         <span className="text-gray-300 font-jersey text-xl">Terminal</span>
       </div>
@@ -61,11 +74,11 @@ const TerminalBlock: React.FC<IProps> = ({ cmd }) => {
         {Array.isArray(cmd) ? (
           <>
             {cmd.map((item, index) => (
-              <Prompt {...item} key={index} />
+              <Prompt {...item} divider={divider} key={index} />
             ))}
           </>
         ) : (
-          <Prompt {...cmd} />
+          <Prompt {...cmd} divider={divider} />
         )}
       </div>
     </div>

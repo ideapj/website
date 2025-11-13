@@ -38,7 +38,7 @@ const frameworks = [
   },
   {
     id: "pj-api",
-    name: "Serverless API Framework",
+    name: "API Framework",
     url: "/docs/api",
   },
 ];
@@ -48,8 +48,8 @@ const Page = () => {
     <DocLayout sections={sections}>
       <section className="section-container">
         <TitleComp title="Introduction" variant="title" />
-        <p className=" text-color">
-          Idea PJ is for <span className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-orange-500 after:rounded px-1 after:translate-y-0.5 hover:after:translate-y-0 after:default-transition">enterprise business </span> only.
+        <p className="text-color">
+          Idea PJ is for <span className="pj-underline">enterprise business </span> only.
         </p>
 
         <h5 className="font-bold text-color-75 mt-5">Framework from Idea PJ</h5>

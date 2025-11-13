@@ -1,9 +1,8 @@
 import TitleComp from "@/components/TitleComp";
-import { cn } from "@/utils";
-import Link from "next/link";
 import { ISectionTitle } from "@/types/common";
 import DocLayout from "@/layouts/DocLayout";
 import LinkList from "@/components/LinkList";
+import WebInstallation from "@/sections/WebInstallation";
 
 const hostings = [
   {
@@ -24,9 +23,15 @@ const hostings = [
 ];
 
 const sections: ISectionTitle[] = [
+  { title: "Installation", id: "installation" },
   { title: "Stack", id: "stack" },
-  { title: "Design System", id: "design-system" },
-  { title: "Hosting", id: "hosting" },
+  { title: "Amplify", id: "amplify" },
+  { title: "Compliance", id: "compliance" },
+  { title: "Integrations", id: "integrations" },
+  // { title: "Security", id: "security" },
+  // { title: "Performance", id: "performance" },
+  // { title: "SEO", id: "seo" },
+  // { title: "Accessibility", id: "accessbility" },
 ];
 
 const Page = () => {
@@ -35,139 +40,120 @@ const Page = () => {
       <section className="section-container">
         <TitleComp title="Web" variant="title" />
         <p className="section-body">
-            IdeaPJ is the Serverless Fullstack framework which is desgned to scale with the company.
-        
+          {`IdeaPJ's technical foundation is rooted in a robust, modern stack leveraging both TanStack and AWS Amplify.`}
         </p>
         <p className="section-body">
-          Idea PJ allow developer to:
-        </p>
-        <ul className="list list-disc section-body">
-          <li>easily configure SEO</li>
-          <li>built secure websites</li>
-          <li>built better UI & UX for the users</li>
-          <li>
-            develop and maintain client side{`( Browsers )`} code
-          </li>
-          <li>develop and maintain server side code</li>
-        </ul>
-      </section>
-      <section className="section-container">
-        <TitleComp {...sections[0]} />
-        <h5 className="s1-b text-white/75 mt-5">Router</h5>
-        <p className="section-body">
-          NextJS come with two router which is page router and app router. Both
-          page router and app router come with benefits and drawback.
+          {`TanStack, consist of open-source libraries & framework which are essential to the web development. TanStack is led by Tanner Linsley and backed by strategic partners such as Cloudflare and Sentry, provides the core web framework.`}
         </p>
         <p className="section-body">
-          Page Router come first, because of that most of our ( idea pj ) tech
-          stack revolve around the page router.
-        </p>
-        <h5 className="s1-b text-white/75 mt-5">State Management</h5>
-        <p className="section-body">
-          State is a special variable in a React component that, when updated,
-          automatically informs (or triggers) the component to re-render with
-          the new value.
-        </p>
-        <p className="section-body">
-          We group the state into categories, which are
-        </p>
-        <ul className="list list-disc section-body gap-5">
-          <li>
-            <h5 className="font-bold mb-2">Global State</h5>
-            <p className="mb-2">
-              A type of state defined outside of React components, typically in
-              standalone stores (e.g. Zustand) or external data layers (e.g.
-              TanStack Query). This state is then connected back to React
-              components for rendering and interaction.
-            </p>
-            <p className="mb-5">
-              In global state, data is managed outside the React component tree
-              and shared across multiple components as needed.
-            </p>
-            <Link className={cn("flex gap-2 text-[#FF5C00] group")} href="/">
-              <span className="group-hover:translate-x-[3px] default-transition">
-                {">"}
-              </span>
-              Learn more
-            </Link>
-          </li>
-          <li>
-            <h5 className="font-bold mb-2">Local State</h5>
-            <p className="mb-5">
-              {
-                "A type of state that is defined and managed directly within a React component using hooks like useState or useReducer. This state is scoped to the component where it's declared and is not accessible by other components unless passed down as props or shared via the Context API."
-              }
-            </p>
-            <p className="mb-5">
-              {
-                "In local state, the data lives and updates inside a single component, making it ideal for handling component-specific logic such as input fields, toggle switches, modal visibility, or temporary UI feedback."
-              }
-            </p>
-            <Link className={cn("flex gap-2 text-[#FF5C00] group")} href="/">
-              <span className="group-hover:translate-x-[3px] default-transition">
-                {">"}
-              </span>
-              Learn more
-            </Link>
-          </li>
-        </ul>
-        <h5 className="s1-b text-white/75 mt-5">Data Fetching & Mutations</h5>
-        <p className="section-body">
-          When fetching or mutating data from an API (separate backend), there’s
-          one key consideration:
-        </p>
-        <p className="section-body">
-          Does the data need to be available during the initial render (i.e.,
-          server-side rendering)?
-        </p>
-        <ul className="list list-disc section-body gap-5">
-          <li>
-            <h5 className="font-bold mb-2">If yes ?</h5>
-            <p className="mb-5">
-              Fetch the data using getServerSideProps to ensure the page is
-              pre-rendered with the required data.
-            </p>
-          </li>
-          <li>
-            <h5 className="font-bold mb-2">If no ?</h5>
-            <p className="mb-5">
-              {
-                "Use useFetchQuery (an extension of TanStack Query’s useQuery) to handle client-side data fetching after the page loads."
-              }
-            </p>
-          </li>
-        </ul>
-        <p className="section-body">
-          Most mutations happen on the client side, so you generally don’t need
-          to handle mutations in server-side logic.
-        </p>
-        <Link className={cn("flex gap-2 text-[#FF5C00] group")} href="/">
-          <span className="group-hover:translate-x-[3px] default-transition">
-            {">"}
-          </span>
-          Learn more
-        </Link>
-        <h5 className="s1-b text-white/75 mt-5">Styling</h5>
-        <p className="section-body">
-          We focus on structure, design token, typography & accessbility in
-          design stage and copy the flow to development stage.
+          {`AWS Amplify for is a comprehensive serverless backend infrastructure, which seamlessly integrates essential Amazon Web Services components like CloudFront for content delivery (CDN), S3 for static asset storage, and Lambda for scalable serverless functions.`}
         </p>
       </section>
+      <WebInstallation {...sections[0]}/>
       <section className="section-container">
         <TitleComp {...sections[1]} />
+        <h5 className="font-bold text-color-75 mt-5 section-heading">
+          TanStack Router
+        </h5>
         <p className="section-body">
-          {"We’ll create a custom design system that combines the structure and discipline of frameworks like Material UI and Ant Design, with the creativity and agility of shadcn/ui and tweakcn."}
+          With <a className="pj-underline font-semibold">TanStack Router</a>,
+          Project create by Idea PJ have following features:
         </p>
+        <ul className="list list-disc section-body gap-5 mt-5">
+          <li>
+            <h5 className="font-bold mb-2">Full-document SSR</h5>
+            <p>
+              Page is render on server before it is send to the client ( aka
+              browser)
+            </p>
+          </li>
+          <li>
+            <h5 className="font-bold mb-2">Server Routes & API Routes</h5>
+            <p>
+              You can build backend api endpoints alongside your React Code (
+              aka view )
+            </p>
+          </li>
+          <li>
+            <h5 className="font-bold mb-2">Server Functions </h5>
+            <p>Able to preform Type-safe RPCs between client and server</p>
+          </li>
+          <li>
+            <h5 className="font-bold mb-2">Middleware & Context</h5>
+            <p>
+              Able to add Middleware between request & response func. Data can
+              be injected using middleware before it reach the target func.
+            </p>
+          </li>
+        </ul>
+
+        <h5 className="font-bold text-color-75 mt-5 section-heading">
+          Query & Mutations
+        </h5>
         <p className="section-body">
-          {"This approach allows us to maintain consistency and scalability while staying flexible for creative, brand-driven design needs."}
+          Most of the modern website required querying & mutations. For that we
+          use{" "}
+          <a className="pj-underline font-semibold" href="">
+            TanStack Query
+          </a>
+        </p>
+        <ul className="list list-disc section-body gap-5 mt-5">
+          <li>
+            <p className="section-body">
+              <span className="font-semibold">Querying:</span>&nbsp; is process
+              of fetching data when user interact with your website.
+            </p>
+          </li>
+          <li>
+            <p className="section-body">
+              <span className="font-semibold">Mutation:</span>&nbsp; is when
+              user action is one of the following, creating, changing, updating
+              or modification.
+            </p>
+          </li>
+        </ul>
+
+        <h5 className="font-bold text-color-75 mt-5 section-heading">
+          Forms & Validation
+        </h5>
+        <p className="section-body">
+          Every website that need to collect data from user required form. Form
+          without validation is just bad UX. We use{" "}
+          <a
+            className="pj-underline font-semibold"
+            href="https://tanstack.com/form/latest"
+            target="_blank"
+          >
+            TanStack Form
+          </a>{" "}
+          to handle forms & valdiation.
+        </p>
+        <p className="section-body px-5 py-3 border shadow mt-5">
+          <strong>Note:</strong>&nbsp; We use Zod for schema validation
         </p>
       </section>
       <section className="section-container">
         <TitleComp {...sections[2]} />
         <p className="section-body">
-          We primarily rely on AWS Cloud Services for hosting. In most cases, we use AWS Amplify for rapid deployment and scalability. However, depending on client needs, we also support Docker or EC2-based VM hosting for more customized infrastructure setups.
+          {
+            "We’ll create a custom design system that combines the structure and discipline of frameworks like Material UI and Ant Design, with the creativity and agility of shadcn/ui and tweakcn."
+          }
         </p>
-        <LinkList list={hostings}/>
+        <p className="section-body">
+          {
+            "This approach allows us to maintain consistency and scalability while staying flexible for creative, brand-driven design needs."
+          }
+        </p>
+      </section>
+      <section className="section-container">
+        <TitleComp {...sections[3]} />
+        <p className="section-body">
+          We primarily rely on AWS Cloud Services for hosting. In most cases, we
+          use AWS Amplify for rapid deployment and scalability. However,
+          depending on client needs, we also support Docker or EC2-based VM
+          hosting for more customized infrastructure setups.
+        </p>
+        <LinkList list={hostings} />
       </section>
     </DocLayout>
   );

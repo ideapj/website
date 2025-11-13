@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { IoIosCheckmark, IoMdCopy } from "react-icons/io";
 
-type IProps = Omit<ISectionTitle, "id"> & {
+export type TitleProps = Omit<ISectionTitle, "id"> & {
   id?: string;
   beardcrumb?: {
     label: string;
@@ -12,6 +12,8 @@ type IProps = Omit<ISectionTitle, "id"> & {
   }[];
   variant?: "section" | "title";
 };
+
+type IProps = TitleProps;
 
 const TitleComp: React.FC<IProps> = ({
   title,
