@@ -1,6 +1,6 @@
 :root {
   color-scheme: light dark;
-  --black: #000;
+  --black: #111;
   --white: #ededed;
 }
 
@@ -23,6 +23,7 @@ html:has(#light:checked) {
   --color-text: rgb(0,0,0);
   --color-text-invert: rgb(255,255,255);
   --color-text-75: rgba(0,0,0,0.75);
+  --color-grid-line: rgba(0,0,0,0.08);
 }
 html:has(#dark:checked) {
   color-scheme: dark;
@@ -33,6 +34,7 @@ html:has(#dark:checked) {
   --color-text: rgb(255,255,255);
   --color-text-invert: rgb(0,0,0);
   --color-text-75: rgba(255,255,255,0.75);
+  --color-grid-line: rgba(255,255,255,0.08);
 
 }
 

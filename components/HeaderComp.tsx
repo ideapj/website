@@ -19,9 +19,9 @@ const menus: IMenuItem[] = [
     label: "Docs",
   },
   {
-    id: "learn",
-    url: "/learn",
-    label: "Learn",
+    id: "recipe",
+    url: "/recipe",
+    label: "Recipe",
   },
   // {
   //   id: "guide",
